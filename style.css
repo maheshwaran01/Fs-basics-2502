@@ -4,21 +4,21 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ffecd2, #fcb69f);
-    overflow-x: hidden;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    overflow: hidden;
   }
   
   /* Glassmorphism container */
-  .tracker-container {
+  .todo-container {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     border-radius: 20px;
     padding: 30px;
-    max-width: 500px;
-    margin: 50px auto;
+    max-width: 400px;
+    margin: 60px auto;
     text-align: center;
-    color: #333;
+    color: #fff;
     animation: fadeIn 1s ease-in;
   }
   
@@ -31,84 +31,70 @@ body, html {
   /* Input Section */
   .input-section {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
-    justify-content: center;
   }
   
-  .input-section input,
-  .input-section select {
-    padding: 10px;
+  #task-input {
+    flex: 1;
+    padding: 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     outline: none;
-    font-size: 14px;
-    flex: 1 1 45%;
+    font-size: 16px;
   }
   
-  #add-expense-btn {
-    padding: 10px 20px;
-    background: #ff7e5f;
-    border: none;
+  #add-task-btn {
+    padding: 0 20px;
+    font-size: 22px;
+    background: #66a6ff;
     color: white;
-    font-weight: bold;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
-    flex: 1 1 100%;
     transition: background 0.3s ease;
   }
   
-  #add-expense-btn:hover {
-    background: #eb5e28;
+  #add-task-btn:hover {
+    background: #5c84e6;
   }
   
-  /* Expense List */
-  #expense-list {
+  /* Task List */
+  #task-list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
   
-  .expense-item {
-    background: rgba(255, 255, 255, 0.4);
+  .task-item {
+    background: rgba(255, 255, 255, 0.3);
     margin-bottom: 10px;
-    padding: 12px;
+    padding: 12px 15px;
     border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #444;
-    animation: fadeIn 0.5s ease-in;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
   }
   
-  .expense-item span {
-    font-size: 14px;
+  .task-item:hover {
+    background: rgba(255, 255, 255, 0.4);
   }
   
-  .expense-item .actions {
-    display: flex;
-    gap: 10px;
+  .task-item.completed {
+    text-decoration: line-through;
+    color: #d1d1d1;
   }
   
-  .edit-btn, .delete-btn {
+  /* Delete Button */
+  .delete-btn {
     background: none;
     border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #ff4b5c;
-  }
-  
-  .edit-btn {
-    color: #4caf50;
-  }
-  
-  /* Total Section */
-  .total {
-    margin-top: 20px;
+    color: #ff6b6b;
     font-size: 20px;
-    font-weight: bold;
-    color: #333;
+    cursor: pointer;
   }
   
   /* Fade In Animation */
@@ -122,10 +108,4 @@ body, html {
       transform: translateY(0);
     }
   }
-  #expenseChart {
-    margin-top: 30px;
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-  }
-    
+  
